@@ -246,6 +246,9 @@
   ;; Imenu
   (setq-local treesit-simple-imenu-settings odin-ts-mode--imenu-settings)
 
+  (setq-local comment-start "//")
+  (setq-local comment-end "")
+
   (treesit-major-mode-setup))
 
 ;;;###autoload
