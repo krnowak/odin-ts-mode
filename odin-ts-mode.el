@@ -199,7 +199,8 @@
      (type (identifier) @font-lock-type-face)
      (enum_declaration (identifier) @font-lock-type-face)
      (union_declaration (identifier) @font-lock-type-face)
-     (bit_field_declaration (identifier) @font-lock-type-face))
+     (bit_field_declaration (identifier) @font-lock-type-face)
+     (type (field_type) @font-lock-type-face))
 
    :language 'odin
    :override t
