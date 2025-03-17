@@ -259,6 +259,7 @@
 
   (treesit-major-mode-setup))
 
+;;;###autoload
 (define-derived-mode odin-ts-mode prog-mode "odin"
   "Major mode for editing odin files, powered by tree-sitter."
   :group 'odin-ts
@@ -267,9 +268,6 @@
   (when (treesit-ready-p 'odin)
     (treesit-parser-create 'odin)
     (odin-ts-mode-setup)))
-
-(when (treesit-ready-p 'odin)
-  (add-to-list 'auto-mode-alist '("\\.odin\\'" . odin-ts-mode)))
 
 (provide 'odin-ts-mode)
 

@@ -31,11 +31,19 @@ and add this to your init.el file:
   (load-file "/path/to/odin-ts-mode.el")
 #+end_src
 *** use-package
-You can also use use-package to install this package, simply add this to your init.el file:
+You can also use use-package to install this package, simply add this to your init.el file (you can skip the usage step below with this):
 #+begin_src elisp
   (use-package odin-ts-mode
-    :ensure (:host github :repo "Sampie159/odin-ts-mode"))
+    :ensure (:host github :repo "Sampie159/odin-ts-mode")
+    :mode "\\.odin\\'")
 #+end_src
+
+** Usage
+Add this to your configuration:
+#+begin_src elisp
+  (add-to-list 'auto-mode-alist '("\\.odin\\'" . odin-ts-mode))
+#+end_src
+
 ** TODO Roadmap? [2/3]
 - [-] Syntax Highlighting [1/2]
   - [X] Get something working
