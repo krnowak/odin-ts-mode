@@ -50,6 +50,7 @@
 
 (require 'treesit)
 (require 'js)
+(require 'c-ts-common)
 
 (defgroup odin-ts nil
   "Major mode for editing odin files."
@@ -254,8 +255,8 @@
   ;; Imenu
   (setq-local treesit-simple-imenu-settings odin-ts-mode--imenu-settings)
 
-  (setq-local comment-start "//")
-  (setq-local comment-end "")
+  ;; Comment
+  (c-ts-common-comment-setup)
 
   (treesit-major-mode-setup))
 
