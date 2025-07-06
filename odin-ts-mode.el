@@ -196,7 +196,6 @@
    :override t
    :feature 'type
    `((struct_declaration (identifier) @font-lock-type-face)
-     (const_declaration (identifier) @font-lock-type-face)
      (type (identifier) @font-lock-type-face)
      (enum_declaration (identifier) @font-lock-type-face)
      (union_declaration (identifier) @font-lock-type-face)
