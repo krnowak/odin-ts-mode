@@ -112,7 +112,7 @@
   "Operators used in `odin-ts-mode`.")
 
 (defconst odin-ts-mode--keywords
-  '("foreign" "or_else"
+  '("foreign" "or_continue" "or_break" "or_else" "or_return"
     "in" "not_in"
     "defer" "return" "proc"
     "struct" "union" "enum" "bit_field" "bit_set" "map"
