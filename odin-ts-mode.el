@@ -180,7 +180,7 @@
 
    :override t
    :feature 'function
-   '((procedure_declaration (identifier) @font-lock-function-name-face)
+   '((procedure_declaration (identifier) @font-lock-function-name-face "::" (procedure "proc" (parameters) ( "->" (type (identifier))) :? body: (_)))
      (call_expression function: (identifier) @font-lock-function-call-face)
      (overloaded_procedure_declaration (identifier) @font-lock-function-name-face))
 
@@ -189,6 +189,8 @@
    `((struct_declaration (identifier) @font-lock-type-face)
      (type (identifier) @font-lock-type-face)
      (const_declaration (identifier) @font-lock-type-face "::" (bit_set_type))
+     (const_declaration (identifier) @font-lock-type-face "::" ((tag) @should-be-hash-type) (:equal @should-be-hash-type "#type"))
+     (procedure_declaration (identifier) @font-lock-type-face "::" (procedure "proc" (parameters) ( "->" (type (identifier))) :? !body))
      (enum_declaration (identifier) @font-lock-type-face)
      (union_declaration (identifier) @font-lock-type-face)
      (bit_field_declaration (identifier) @font-lock-type-face)
