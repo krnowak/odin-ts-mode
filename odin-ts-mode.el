@@ -129,12 +129,12 @@
 
 (defvar odin-ts-mode--font-lock-rules
   (treesit-font-lock-rules
-   :language 'odin
+   :default-language 'odin
+
    :override t
    :feature 'variable
    '((identifier) @font-lock-variable-use-face)
 
-   :language 'odin
    :override t
    :feature 'namespace
    '((package_declaration (identifier) @font-lock-constant-face)
@@ -142,12 +142,10 @@
      (foreign_block (identifier) @font-lock-constant-face)
      (using_statement (identifier) @font-lock-constant-face))
 
-   :language 'odin
    :override t
    :feature 'comment
    '([(comment) (block_comment)] @font-lock-comment-face)
 
-   :language 'odin
    :override t
    :feature 'literal
    '((number) @font-lock-number-face
@@ -156,22 +154,18 @@
      (boolean) @font-lock-constant-face
      [(uninitialized) (nil)] @font-lock-constant-face)
 
-   :language 'odin
    :override t
    :feature 'string
    '((string) @font-lock-string-face)
 
-   :language 'odin
    :override t
    :feature 'escape-sequence
    '((escape_sequence) @font-lock-escape-face)
 
-   :language 'odin
    :override t
    :feature 'preproc
    '([(calling_convention) (tag)] @font-lock-preprocessor-face)
 
-   :language 'odin
    :override t
    :feature 'keyword
    `([,@odin-ts-mode--keywords] @font-lock-keyword-face
@@ -180,19 +174,16 @@
      [,@odin-ts-mode--conditionals (fallthrough_statement)] @font-lock-keyword-face
      [,@odin-ts-mode--repeats] @font-lock-keyword-face)
 
-   :language 'odin
    :override t
    :feature 'builtin
    '(["auto_cast" "cast" "transmute"] @font-lock-builtin-face)
 
-   :language 'odin
    :override t
    :feature 'function
    '((procedure_declaration (identifier) @font-lock-function-name-face)
      (call_expression function: (identifier) @font-lock-function-call-face)
      (overloaded_procedure_declaration (identifier) @font-lock-function-name-face))
 
-   :language 'odin
    :override t
    :feature 'type
    `((struct_declaration (identifier) @font-lock-type-face)
@@ -203,7 +194,6 @@
      (bit_field_declaration (identifier) @font-lock-type-face)
      (type (field_type) @font-lock-type-face))
 
-   :language 'odin
    :override t
    :feature 'punctuation
    `([,@odin-ts-mode--operators] @font-lock-punctuation-face
@@ -211,12 +201,10 @@
      ["::" "->" "." "," ":" ";"] @font-lock-punctuation-face
      ["@" "$"] @font-lock-punctuation-face)
 
-   :language 'odin
    :override t
    :feature 'error
    '((ERROR) @font-lock-warning-face)
 
-   :language 'odin
    :override t
    :feature 'property
    `((field (identifier) @font-lock-property-name-face)
